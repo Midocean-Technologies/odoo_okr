@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_result_tree" model="ir.ui.view">
+        <field name="name">key.result.tree</field>
+        <field name="model">key.result</field>
+        <field name="arch" type="xml">
+            <tree string="Key Result">
+                <field name="key_result_progress"/>
+                <field name="employee"/>
+                <field name="employee_id"/>
+              </tree>
+         </field>
+    </record>
+
+    <record id="view_result_form" model="ir.ui.view">
+        <field name="name">key.result.form</field>
+        <field name="model">key.result</field>
+        <field name="arch" type="xml">
+            <form string="Key Result">
+                <header>
+                </header>
+                <sheet>
+                    <group> 
+                      <group>
+                          <label for="key_result_progress"/>
+                        <div class="o_row">
+                        <field name="key_result_progress"/><span>%%</span>
+                        </div>
+                         <field name="employee"/>
+                         <field name="employee_id"/>
+                        </group>
+                   </group>
+                </sheet>
+          </form>
+        </field>
+    </record> 
+
+
+   
+
+
+     <record id="view_result_search" model="ir.ui.view">
+       <field name="name">key.result.search</field>
+       <field name="model">key.result</field>
+       <field name="arch" type="xml">
+           <search>
+               <field name="employee_id"/>
+            </search>
+       </field>  
+    </record>
+
+    
+
+    <record id="action_result_view" model="ir.actions.act_window">
+         <field name="name">Key Result</field>
+         <field name="res_model">key.result</field>
+         <field name="view_mode">tree,form</field>
+         <field name="view_id" ref="view_result_tree"/>
+    </record>
+
+
+    <menuitem id="main_menu_result"
+              name="Key Result"
+              parent="root_menu_objective"
+              sequence="2"/>
+
+
+    <menuitem id="sub_menu_result"
+              name="Key Result"
+              parent="main_menu_result"
+              action="action_result_view"/>
+
+</odoo>

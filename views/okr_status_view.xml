@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_status_tree" model="ir.ui.view">
+        <field name="name">okr.status.tree</field>
+        <field name="model">okr.status</field>
+        <field name="arch" type="xml">
+            <tree string="OKR STATUS">
+                <field name="status"/>
+              </tree>
+         </field>
+    </record>
+
+    <record id="view_status_form" model="ir.ui.view">
+        <field name="name">okr.status.form</field>
+        <field name="model">okr.status</field>
+        <field name="arch" type="xml">
+            <form string="OKR STATUS">
+                <header>
+                </header>
+                <sheet>
+                    <group> 
+                      <group>
+                         <field name="status"/>
+                        </group>
+                   </group>
+                </sheet>
+          </form>
+        </field>
+    </record> 
+
+
+     <record id="view_status_search" model="ir.ui.view">
+       <field name="name">okr.status.search</field>
+       <field name="model">okr.status</field>
+       <field name="arch" type="xml">
+           <search>
+               <field name="status"/>
+            </search>
+       </field>  
+    </record>
+
+    
+
+    <record id="action_status_view" model="ir.actions.act_window">
+         <field name="name">OKR STATUS</field>
+         <field name="res_model">okr.status</field>
+         <field name="view_mode">tree,form</field>
+         <field name="view_id" ref="view_status_tree"/>
+    </record>
+
+
+    <menuitem id="main_menu_status"
+              name="Okr Status"
+              parent="root_menu_objective"
+              sequence="3"/>
+
+
+    <menuitem id="sub_menu_status"
+              name="Okr Status"
+              parent="main_menu_status"
+              action="action_status_view"/>
+
+</odoo>

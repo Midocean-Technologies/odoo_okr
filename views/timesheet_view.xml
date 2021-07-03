@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_timesheet_tree" model="ir.ui.view">
+        <field name="name">timesheet.timesheet.tree</field>
+        <field name="model">timesheet.timesheet</field>
+        <field name="arch" type="xml">
+            <tree string="Timesheet">
+                <field name="company"/>
+                <field name="employee"/>
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="percent"/>
+              </tree>
+         </field>
+    </record>
+
+    <record id="view_timesheet_form" model="ir.ui.view">
+        <field name="name">timesheet.timesheet.form</field>
+        <field name="model">timesheet.timesheet</field>
+        <field name="arch" type="xml">
+            <form string="Timesheet">
+                <header>
+                </header>
+                <sheet>
+                    <group> 
+                      <group>
+                        <field name="company" />
+                        <field name="employee"/>
+                        <field name="employee_id"/>
+                        </group>
+                        <group>
+                         <field name="date"/>
+                          <label for="percent"/>
+                        <div class="o_row">
+                        <field name="percent"/><span>%%</span>
+                        </div>
+                        </group>
+                        <group>
+                       
+                   </group>
+                    <group>
+                        
+                    </group>
+       
+                   </group>
+                   <separator string='Task Details' />
+                    <field name='timesheet_ids' >
+                    <tree editable='bottom'>
+                    <field name ="start_time" />
+                    <field name ="end_time" />
+                    <field name ="status" />
+                    <field name ="key_result" />
+                    </tree>
+                    </field>
+                </sheet>
+
+          </form>
+        </field>
+    </record> 
+
+
+     <record id="view_timesheet_search" model="ir.ui.view">
+       <field name="name">timesheet.timesheet.search</field>
+       <field name="model">timesheet.timesheet</field>
+       <field name="arch" type="xml">
+           <search>
+               <field name="employee_id"/>
+            </search>
+       </field>  
+    </record>
+
+    
+
+    <record id="action_timesheet_view" model="ir.actions.act_window">
+         <field name="name">Timesheet</field>
+         <field name="res_model">timesheet.timesheet</field>
+         <field name="view_mode">tree,form</field>
+         <field name="view_id" ref="view_timesheet_tree"/>
+    </record>
+
+
+  
+
+    <menuitem id="main_menu_timesheet"
+              name="Timesheet"
+              parent="root_menu_objective"
+              sequence="4"/>
+
+
+    <menuitem id="sub_menu_timesheet"
+              name="Timesheet"
+              parent="main_menu_timesheet"
+              action="action_timesheet_view"/>
+
+</odoo>
