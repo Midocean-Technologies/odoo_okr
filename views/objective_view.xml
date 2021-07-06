@@ -10,7 +10,6 @@
                 <field name="end_date"/>
                 <field name="total_hour"/>
                 <field name="progress"/>
-                <field name="company"/>
                 <field name="purpose"/>
                 <field name="remark"/>
               </tree>
@@ -27,9 +26,9 @@
                 <sheet>
                     <group> 
                       <group>
-                        <field name="objective_title_id" />
-                        <field name="start_date"/>
-                        <field name="end_date"/>
+                        <field name="objective_title_id"  required="1"/>
+                        <field name="start_date"  required="1"/>
+                        <field name="end_date"  required="1"/>
                         <field name="total_hour"/>
                         <label for="progress"/>
                         <div class="o_row">
@@ -37,8 +36,7 @@
                         </div>
                         </group>
                         <group>
-                         <field name="company"/>
-                        <field name="purpose"/>
+                        <field name="purpose"  required="1"/>
                         <field name="remark"/>
                         </group>
                         <group>
@@ -91,7 +89,7 @@
     <menuitem id="main_menu_objective"
               name="Objective"
               parent="root_menu_objective"
-              sequence="1"/>
+              sequence="2"/>
 
 
     <menuitem id="sub_menu_objective"
