@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <tree string="OKR STATUS">
                 <field name="status"/>
+                <field name="value"/>
               </tree>
          </field>
     </record>
@@ -21,6 +22,7 @@
                     <group> 
                       <group>
                          <field name="status"/>
+                         <field name="value"/>
                         </group>
                    </group>
                 </sheet>
@@ -50,13 +52,13 @@
 
 
     <menuitem id="main_menu_status"
-              name="Okr Status"
+              name="OKR Status"
               parent="root_menu_objective"
-              sequence="3"/>
+              sequence="4"/>
 
 
     <menuitem id="sub_menu_status"
-              name="Okr Status"
+              name="OKR Status"
               parent="main_menu_status"
               action="action_status_view"/>
 
