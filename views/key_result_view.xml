@@ -62,7 +62,7 @@
     <menuitem id="main_menu_result"
               name="Key Result"
               parent="root_menu_objective"
-              sequence="2"/>
+              sequence="3"/>
 
 
     <menuitem id="sub_menu_result"
