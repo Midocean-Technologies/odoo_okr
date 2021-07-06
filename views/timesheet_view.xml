@@ -4,8 +4,7 @@
         <field name="name">timesheet.timesheet.tree</field>
         <field name="model">timesheet.timesheet</field>
         <field name="arch" type="xml">
-            <tree string="Timesheet">
-                <field name="company"/>
+            <tree string="Daily Planning Schedule">
                 <field name="employee"/>
                 <field name="employee_id"/>
                 <field name="date"/>
@@ -18,14 +17,13 @@
         <field name="name">timesheet.timesheet.form</field>
         <field name="model">timesheet.timesheet</field>
         <field name="arch" type="xml">
-            <form string="Timesheet">
+            <form string="Daily Planning Schedule">
                 <header>
                 </header>
                 <sheet>
                     <group> 
                       <group>
-                        <field name="company" />
-                        <field name="employee"/>
+                        <field name="employee" required="1"/>
                         <field name="employee_id"/>
                         </group>
                         <group>
@@ -72,7 +70,7 @@
     
 
     <record id="action_timesheet_view" model="ir.actions.act_window">
-         <field name="name">Timesheet</field>
+         <field name="name">Daily Planning Schedule</field>
          <field name="res_model">timesheet.timesheet</field>
          <field name="view_mode">tree,form</field>
          <field name="view_id" ref="view_timesheet_tree"/>
@@ -82,13 +80,13 @@
   
 
     <menuitem id="main_menu_timesheet"
-              name="Timesheet"
+              name="Daily Planning Schedule"
               parent="root_menu_objective"
-              sequence="4"/>
+              sequence="1"/>
 
 
     <menuitem id="sub_menu_timesheet"
-              name="Timesheet"
+              name="Daily Planning Schedule"
               parent="main_menu_timesheet"
               action="action_timesheet_view"/>
 
