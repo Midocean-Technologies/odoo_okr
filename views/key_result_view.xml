@@ -5,6 +5,7 @@
         <field name="model">key.result</field>
         <field name="arch" type="xml">
             <tree string="Key Result">
+                <field name="key_result_title"/>
                 <field name="key_result_progress"/>
                 <field name="employee"/>
                 <field name="employee_id"/>
@@ -26,6 +27,7 @@
                         <div class="o_row">
                         <field name="key_result_progress"/><span>%%</span>
                         </div>
+                        <field name="key_result_title"/>
                          <field name="employee"/>
                          <field name="employee_id"/>
                         </group>
@@ -40,6 +42,7 @@
 
 
      <record id="view_result_search" model="ir.ui.view">
+    
        <field name="name">key.result.search</field>
        <field name="model">key.result</field>
        <field name="arch" type="xml">

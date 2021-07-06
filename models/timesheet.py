@@ -9,7 +9,7 @@ class Timesheet(models.Model):
     _rec_name = 'employee_id'
 
 
-    employee = fields.Many2one('res.partner',string='USER')
+    employee = fields.Many2one('res.users',string='User', default=lambda self: self.env.user)
     employee_id = fields.Many2one('res.partner',string='Employee Name')
     date = fields.Date(string=" Date",default=datetime.today())
     percent = fields.Float(string='DSP Percent')
@@ -22,8 +22,8 @@ class TimesheetLine(models.Model):
     _description='Timesheet Line'
 
     timesheet_id = fields.Many2one('timesheet.timesheet',string="Timesheet")
-    start_time = fields.Date("Start Time" ,default=datetime.today())
-    end_time = fields.Date("End Time")
+    start_time = fields.Datetime("Start Time")
+    end_time = fields.Datetime("End Time")
     status = fields.Many2one('okr.status',"Status")
     key_result = fields.Many2one('key.result','Key Result')
 
