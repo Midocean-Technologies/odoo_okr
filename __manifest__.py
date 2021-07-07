@@ -8,7 +8,7 @@
    'version' : '14.0.1.0',
    'depends' : ['base','sale_management'],
    'data':[ 'security/ir.model.access.csv',
-             'security/okr_security.xml',
+             #'security/okr_security.xml',
             'views/objective_view.xml',
             'views/key_result_view.xml',
             'views/okr_status_view.xml',
