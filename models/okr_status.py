@@ -8,10 +8,11 @@ class Status(models.Model):
     _rec_name = 'status'
  
     status = fields.Char(string='Status')
-    value = fields.Float(string='Add Value')
+    value = fields.Float(string='Value')
     
     
 
    
 
+   
    
