@@ -6,7 +6,6 @@
         <field name="arch" type="xml">
             <tree string="Daily Planning Schedule">
                 <field name="employee"/>
-                <field name="employee_id"/>
                 <field name="date"/>
                 <field name="percent"/>
               </tree>
@@ -24,7 +23,6 @@
                     <group> 
                       <group>
                         <field name="employee" required="1"/>
-                        <field name="employee_id"/>
                         </group>
                         <group>
                          <field name="date"/>
@@ -46,6 +44,7 @@
                     <tree editable='bottom'>
                     <field name ="start_time" />
                     <field name ="end_time" />
+                    <field name ="task_detail" />
                     <field name ="status" />
                     <field name ="key_result" />
                     </tree>
@@ -62,7 +61,7 @@
        <field name="model">timesheet.timesheet</field>
        <field name="arch" type="xml">
            <search>
-               <field name="employee_id"/>
+                        <field name="employee"/>
             </search>
        </field>  
     </record>
