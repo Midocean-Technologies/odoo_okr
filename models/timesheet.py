@@ -9,7 +9,7 @@ class Timesheet(models.Model):
     _rec_name = 'employee'
 
 
-    employee = fields.Many2one('res.partner',string='USER')
+    employee = fields.Many2one('res.users',string='USER')
     date = fields.Date(string=" Date",default=datetime.today())
     percent = fields.Float(string='DSP Percent' ,readonly='True')
     timesheet_ids = fields.One2many('timesheet.line' ,'timesheet_id')
