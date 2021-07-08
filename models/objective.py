@@ -27,7 +27,7 @@ class ObjectiveLine(models.Model):
 
     objective_id = fields.Many2one('objective.objective',string="Objective")
     key_result = fields.Many2one('key.result',"Key Result")
-    employee = fields.Many2one('res.partner',"USER")
+    employee = fields.Many2one('res.users',"USER")
     progress = fields.Float(string='Progress %')
     total_hour = fields.Float(string='Total Hours')
     
