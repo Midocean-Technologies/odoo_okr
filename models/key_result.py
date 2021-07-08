@@ -8,7 +8,7 @@ class Key(models.Model):
     _rec_name = 'employee_id'
  
     key_result_progress = fields.Float(string='Key Result Progress ')
-    employee = fields.Many2one('res.partner',string='USER')
+    employee = fields.Many2one('res.users',string='USER')
     employee_id = fields.Many2one('res.partner',string='Employee Name')
     
 
