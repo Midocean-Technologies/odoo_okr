@@ -7,7 +7,7 @@
             <tree string="Key Result">
                 <field name="key_result_progress"/>
                 <field name="employee"/>
-                <field name="employee_id"/>
+                <field name="title_id"/>
               </tree>
          </field>
     </record>
@@ -27,7 +27,7 @@
                         <field name="key_result_progress"/><span>%%</span>
                         </div>
                          <field name="employee"/>
-                         <field name="employee_id"/>
+                         <field name="title_id"/>
                         </group>
                    </group>
                 </sheet>
@@ -44,7 +44,7 @@
        <field name="model">key.result</field>
        <field name="arch" type="xml">
            <search>
-               <field name="employee_id"/>
+               <field name="title_id"/>
             </search>
        </field>  
     </record>

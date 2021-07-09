@@ -6,7 +6,8 @@ access_okr_status,access_okr_status,model_okr_status,base.group_user,1,1,1,1
 access_timesheet_timesheet,access_timesheet_timesheet,model_timesheet_timesheet,base.group_user,1,1,1,1
 access_timesheet_line,access_timesheet_line,model_timesheet_line,base.group_user,1,1,1,1
 access_objective_line,access_objective_line,model_objective_line,base.group_user,1,1,1,1
-
+access_timesheet_timesheet_employee,access_timesheet_timesheet_employee,model_timesheet_timesheet,group_employee_okr,1,1,0,0
+access_timesheet_timesheet_manager,access_timesheet_timesheet_manager,model_timesheet_timesheet,group_Manager_okr,1,1,1,1
 
 
 
