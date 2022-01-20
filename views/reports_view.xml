@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_report_tree" model="ir.ui.view">
+        <field name="name">keyresult.report.tree</field>
+        <field name="model">keyresult.report</field>
+        <field name="arch" type="xml">
+            <tree string="Report">
+                <field name="partner_id"/>
+                <field name="key_result_id"/>
+                <field name="hours"/>
+              </tree>
+         </field>
+    </record>
+
+    <record id="action_report_view" model="ir.actions.act_window">
+         <field name="name">KeyResult Report</field>
+         <field name="res_model">keyresult.report</field>
+         <field name="view_mode">tree</field>
+         <field name="view_id" ref="view_report_tree"/>
+    </record>
+
+
+    <menuitem id="main_menu_report"
+              name="Report"
+              parent="root_menu_objective"
+              />
+
+    <menuitem id="sub_menu_status"
+              name="KeyResult Report"
+              parent="main_menu_report"
+              action="action_report_view"/>
+
+
+
+</odoo>

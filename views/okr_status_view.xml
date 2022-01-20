@@ -43,7 +43,7 @@
 
     
 
-    <record id="action_status_view" model="ir.actions.act_window">
+    <record id="action_status_view_2" model="ir.actions.act_window">
          <field name="name">OKR STATUS</field>
          <field name="res_model">okr.status</field>
          <field name="view_mode">tree,form</field>
@@ -51,15 +51,15 @@
     </record>
 
 
-    <menuitem id="main_menu_status"
+    <menuitem id="main_menu_status_2"
               name="OKR Status"
               parent="root_menu_objective"
-              sequence="4"/>
+             />
 
 
-    <menuitem id="sub_menu_status"
+    <menuitem id="sub_menu_status_2"
               name="OKR Status"
-              parent="main_menu_status"
-              action="action_status_view"/>
+              parent="main_menu_status_2"
+              action="action_status_view_2"/>
 
 </odoo>

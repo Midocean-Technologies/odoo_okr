@@ -5,11 +5,12 @@
         <field name="model">timesheet.timesheet</field>
         <field name="arch" type="xml">
             <tree string="Daily Planning Schedule">
-                <field name="employee"/>
+                <field name="partner_id"/>
                 <field name="date"/>
+                <!--                <field name="key_result_id"/>-->
                 <field name="percent"/>
-              </tree>
-         </field>
+            </tree>
+        </field>
     </record>
 
     <record id="view_timesheet_form" model="ir.ui.view">
@@ -20,68 +21,65 @@
                 <header>
                 </header>
                 <sheet>
-                    <group> 
-                      <group>
-                        <field name="employee" required="1"/>
-                        </group>
-                        <group>
-                         <field name="date"/>
-                          <label for="percent"/>
-                        <div class="o_row">
-                        <field name="percent"/><span>%%</span>
-                        </div>
-                        </group>
-                        <group>
-                       
-                   </group>
                     <group>
-                        
+                        <group>
+                            <field name="partner_id" required="1"/>
+                            <!--                        <field name="key_result_id" required="1"/>-->
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <label for="percent"/>
+                            <div class="o_row">
+                                <field name="percent"/>
+                                <span>%%</span>
+                            </div>
+                        </group>
+                        <group>
+
+                        </group>
+                        <group>
+
+                        </group>
+
                     </group>
-       
-                   </group>
-                   <separator string='Task Details' />
-                    <field name='timesheet_ids' >
-                    <tree editable='bottom'>
-                    <field name ="start_time" widget='float_time'/>
-                    <field name ="end_time" widget='float_time'/>
-                    <field name ="task_detail" />
-                    <field name ="status" />
-                    <field name ="key_result" />
-                    </tree>
+                    <separator string='Task Details'/>
+                    <field name='timesheet_ids'>
+                        <tree editable='bottom'>
+                            <field name="start_time"/>
+                            <field name="end_time"/>
+                            <field name="key_result_id"/>
+                            <field name="task_detail"/>
+                            <field name="status_id"/>
+                        </tree>
                     </field>
                 </sheet>
 
-          </form>
+            </form>
         </field>
-    </record> 
-
-
-     <record id="view_timesheet_search" model="ir.ui.view">
-       <field name="name">timesheet.timesheet.search</field>
-       <field name="model">timesheet.timesheet</field>
-       <field name="arch" type="xml">
-           <search>
-                        <field name="employee"/>
-            </search>
-       </field>  
     </record>
 
-    
+
+    <record id="view_timesheet_search" model="ir.ui.view">
+        <field name="name">timesheet.timesheet.search</field>
+        <field name="model">timesheet.timesheet</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="partner_id"/>
+            </search>
+        </field>
+    </record>
+
 
     <record id="action_timesheet_view" model="ir.actions.act_window">
-         <field name="name">Daily Planning Schedule</field>
-         <field name="res_model">timesheet.timesheet</field>
-         <field name="view_mode">tree,form</field>
-         <field name="view_id" ref="view_timesheet_tree"/>
+        <field name="name">Daily Planning Schedule</field>
+        <field name="res_model">timesheet.timesheet</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_timesheet_tree"/>
     </record>
-
-
-  
 
     <menuitem id="main_menu_timesheet"
               name="Daily Planning Schedule"
-              parent="root_menu_objective"
-              sequence="1"/>
+              parent="root_menu_objective"/>
 
 
     <menuitem id="sub_menu_timesheet"

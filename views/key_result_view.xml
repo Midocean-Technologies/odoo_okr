@@ -5,9 +5,10 @@
         <field name="model">key.result</field>
         <field name="arch" type="xml">
             <tree string="Key Result">
+                <field name="title"/>
+                <field name="partner_id"/>
+                <field name="hours" widget="float_time"/>
                 <field name="key_result_progress"/>
-                <field name="employee"/>
-                <field name="title_id"/>
               </tree>
          </field>
     </record>
@@ -26,8 +27,9 @@
                         <div class="o_row">
                         <field name="key_result_progress"/><span>%%</span>
                         </div>
-                         <field name="employee"/>
-                         <field name="title_id"/>
+                         <field name="partner_id"/>
+                         <field name="title"/>
+                         <field name="hours" widget="float_time"/>
                         </group>
                    </group>
                 </sheet>
@@ -44,7 +46,7 @@
        <field name="model">key.result</field>
        <field name="arch" type="xml">
            <search>
-               <field name="title_id"/>
+               <field name="title"/>
             </search>
        </field>  
     </record>
@@ -62,7 +64,7 @@
     <menuitem id="main_menu_result"
               name="Key Result"
               parent="root_menu_objective"
-              sequence="3"/>
+              />
 
 
     <menuitem id="sub_menu_result"
